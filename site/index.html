@@ -1,16 +1,7 @@
 <!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>HomeFare</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Cheap flights home from the UK. We watch fares to 50 cities across Africa, South Asia, the Caribbean and beyond, and tell you when they drop well below normal.">
-<!-- Travelpayouts Drive (affiliate partner verification). Features switched off in the Travelpayouts dashboard. -->
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.setAttribute("data-cmp-ab","2");
-      script.src = 'https://emrldtp.cc/NTk5NDI1.js?t=599425';
-      document.head.appendChild(script);
-  })();
-</script>
+<!-- Travelpayouts script: loaded only after the visitor allows cookies (see the cookie banner code at the bottom). -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Permanent+Marker&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -37,7 +28,7 @@
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;margin:0}
 .wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.05}
-h1{font-size:clamp(2.5rem,6.2vw,4.4rem);font-weight:700}
+h1{font-size:clamp(2.3rem,5vw,3.7rem);font-weight:700}
 h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700}
 h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
 p{margin:0}
@@ -120,6 +111,36 @@ section{padding-block:clamp(56px,8vw,96px)}
 .sticky-cta .btn{padding:.65rem 1rem;font-size:.95rem;flex:none}
 @media (min-width:881px){.sticky-cta{display:none!important}}
 footer{padding-bottom:72px}
+.join-card{background:var(--bg);border:2px solid var(--blue);border-radius:18px;padding:clamp(16px,3vw,22px);display:grid;gap:14px;box-shadow:0 18px 40px -28px rgba(20,33,61,.6);max-width:560px}
+.join-head{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;scroll-margin-top:24px}
+.join-head b{font-size:1.25rem;letter-spacing:-.01em}
+.pill{background:var(--gold);color:var(--gold-ink);font-size:.78rem;font-weight:700;border-radius:999px;padding:3px 10px}
+.perks{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:.95rem}
+.perks li{padding-left:24px;position:relative}
+.perks li::before{content:"";position:absolute;left:2px;top:.45em;width:12px;height:7px;border-left:2.5px solid var(--blue);border-bottom:2.5px solid var(--blue);transform:rotate(-45deg)}
+.join-card .field input,.join-card select{font:500 1rem var(--sans);padding:.7rem .8rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;max-width:none}
+.join-card .btn{width:100%}
+.err{color:var(--red)}
+.fares{padding-block:clamp(40px,6vw,72px)}
+.kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--red);margin:0}
+.fare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+.fare{border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:4px;background:var(--bg)}
+.fare .fr{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+.fare h3{font-size:1.15rem}
+.fare .fp{font-weight:700;font-size:2rem;letter-spacing:-.03em;line-height:1.1;color:var(--blue)}
+.fare .fp small{font-size:.9rem;font-weight:500;color:var(--muted);letter-spacing:0}
+.fare p{margin:0;font-size:.88rem;color:var(--muted)}
+.fare .fv{color:var(--good,#1E7F4F);font-weight:600}
+.founding{margin:0;background:var(--gold);color:var(--gold-ink);border-radius:10px;padding:8px 12px;font-size:.95rem}
+.cookie{position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--bg);border-top:2px solid var(--line);box-shadow:0 -10px 30px -18px rgba(20,33,61,.6);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;
+  padding:14px max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.cookie p{margin:0;font-size:.9rem;max-width:70ch;min-width:0}
+.cookie-btns{display:flex;gap:10px}
+.cookie-btns .btn{padding:.6rem 1.1rem}
+@media (max-width:880px){.fare-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:340px){.fare-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.fare{padding:14px}.fare .fp{font-size:1.6rem}}
 .checked{margin:0;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
 .perf{border:0;border-top:2px dashed var(--line);margin:0 -22px}
 .prices{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
@@ -231,11 +252,38 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
       <div class="hero-copy">
         <h1>Mum keeps asking when you're coming home. <span class="scrawl">We'll tell you when it's cheap.</span></h1>
         <p class="lead">HomeFare checks flights from UK airports to 50 cities across Africa, South Asia, the Caribbean and beyond. When a fare home drops well below normal, it lands in your inbox.</p>
-        <div class="cta-row">
-          <a class="btn btn-primary js-signup" data-track="trial-hero" href="#join">Start your 7-day free trial</a>
-          <a class="btn btn-line" href="#example">See an example alert</a>
-        </div>
-        <p class="small">Then £49 a year. Cancel in one click. Save £300 in your first year or your money back. <a href="#trip" data-track="tripwatch-hero">Already know your dates?</a></p>
+        <form id="joinForm" class="join-card" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="waitlist">
+          <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+          <div class="join-head" id="signup"><b id="joinTitle">Join the waitlist</b><span class="pill" id="joinPill">Opening in December</span></div>
+          <ul class="perks" id="perksWaitlist">
+            <li><b>Free deal alerts through December</b>, while we finish building</li>
+            <li><b>Founding price: £29 for your first year</b> (then £49). Waitlist only</li>
+            <li>No card needed. Unsubscribe in one click</li>
+          </ul>
+          <ul class="perks" id="perksTrial" hidden>
+            <li><b>7 days free</b>, then £49 a year</li>
+            <li><b>Save £300 in your first year</b> or your money back</li>
+            <li>Cancel in one click, any time</li>
+          </ul>
+          <div class="tf-row">
+            <div class="field"><label for="jHome">Where's home?</label>
+              <input id="jHome" name="home" list="destList" placeholder="e.g. Lagos, Lahore, Kingston" autocomplete="off"></div>
+            <div class="field"><label for="jFrom">Your UK airport</label>
+              <select id="jFrom" name="airport"><option>London (any)</option><option>Manchester</option><option>Birmingham</option><option>Other UK airport</option></select></div>
+          </div>
+          <div class="field"><label for="jEmail">Email</label>
+            <input id="jEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></div>
+          <button id="jBtn" class="btn btn-primary" type="submit">Join the waitlist</button>
+          <p id="jErr" class="small err" hidden role="alert"></p>
+          <div id="jDone" class="t-done" hidden tabindex="-1">
+            <b>You're in.</b>
+            <p id="jSummary"></p>
+            <p class="small">Already know your dates? <a href="#trip">Tell us your trip</a> and we'll watch it for you.</p>
+            <p id="jPreview" class="small" hidden>Preview only: on your live site, this saves to your waitlist.</p>
+          </div>
+        </form>
+        <p class="small"><a href="#fares">See real fares we found this week</a> · <a href="#example">See an example alert</a></p>
       </div>
 
       <div>
@@ -257,6 +305,25 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
       </div>
     </div>
   </div>
+
+  <section id="fares" class="fares">
+    <div class="wrap">
+      <div class="head">
+        <p class="kicker">Spotted by our price engine · 11 Nov 2026</p>
+        <h2>Real return fares from London this week</h2>
+        <p class="muted">Examples from our daily price scan, not offers. Fares change fast, which is exactly why we check every day.</p>
+      </div>
+      <div class="fare-grid">
+        <article class="fare"><div class="fr">LON → LOS</div><h3>Lagos</h3><div class="fp">£313 <small>return</small></div><p>26 Jan – 2 Feb · Royal Air Maroc · 1 stop</p><p class="fv">Checked live on Google Flights</p></article>
+        <article class="fare"><div class="fr">LGW → DEL</div><h3>Delhi</h3><div class="fp">£434 <small>return</small></div><p>19 – 28 May · Gulf Air · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → MNL</div><h3>Manila</h3><div class="fp">£447 <small>return</small></div><p>22 Jan – 20 Feb · Xiamen Air · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → CMB</div><h3>Colombo</h3><div class="fp">£527 <small>return</small></div><p>14 Jan – 3 Feb · Etihad · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → ATQ</div><h3>Amritsar</h3><div class="fp">£575 <small>return</small></div><p>17 Feb – 14 Mar · Air India · 1 stop</p></article>
+        <article class="fare"><div class="fr">LGW → DAC</div><h3>Dhaka</h3><div class="fp">£578 <small>return</small></div><p>11 Jan – 1 Feb · Air Arabia · 1 stop</p></article>
+      </div>
+      <p class="small">Per person, economy, found on 11 Nov 2026. Bag allowances vary by fare. Waitlist members get alerts like these through December, free.</p>
+    </div>
+  </section>
 
   <div class="bag" role="presentation"></div>
 
@@ -429,6 +496,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
           <h3>HomeFare membership</h3>
           <div class="price">£49 <small>a year</small></div>
           <p class="muted" style="font-size:.95rem">That's under £1 a week. Less than one checked bag.</p>
+          <p class="founding" id="founding" hidden>Join the waitlist now and your first year is <b>£29</b>.</p>
           <ul><li>Deals home from your UK airports, as soon as we find them</li><li>Trip Watch on your exact route and dates, as many trips as you like</li><li>"Book now or wait?" advice for Christmas, Easter, Eid and summer</li><li>Bag allowance and example dates in every alert</li></ul>
           <a class="btn btn-primary js-signup" data-track="trial-plan" href="#join">Start your 7-day free trial</a>
           <p class="small">£0 today. £49 after 7 days unless you cancel.</p>
@@ -482,6 +550,14 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
   </div>
 </main>
 
+<div id="cookieBanner" class="cookie" role="region" aria-label="Cookie choice" hidden>
+  <p>Can our travel partner, Travelpayouts, use cookies? It lets us earn a small commission when you book through our links, at no extra cost to you. Our own visitor counting doesn't use cookies.</p>
+  <div class="cookie-btns">
+    <button id="ckReject" class="btn btn-line" type="button">No thanks</button>
+    <button id="ckAccept" class="btn btn-line" type="button">Allow</button>
+  </div>
+</div>
+
 <div id="stickyCta" class="sticky-cta" hidden>
   <span><b>HomeFare</b> · cheap flights home</span>
   <a class="btn btn-primary js-signup" data-track="trial-sticky" href="#join">Start free trial</a>
@@ -490,7 +566,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
 <footer>
   <div class="wrap">
     <span>© <span id="yr">2026</span> HomeFare. We're not a travel agent and don't sell tickets.</span>
-    <span>Fares change quickly. Always check the final price before you book. We count visits with cookie-free analytics. Our travel partner Travelpayouts also runs a script on this site.</span>
+    <span>Fares change quickly. Always check the final price before you book. We count visits with cookie-free analytics. With your permission, our travel partner Travelpayouts uses cookies to track bookings from our links. <a href="#" id="ckSettings">Cookie settings</a></span>
   </div>
 </footer>
 
@@ -593,11 +669,23 @@ function track(name, data){
   /* Waitlist mode: until a checkout link is added, every "trial" button leads to this form and it saves to the waitlist. */
   const tripForm = document.getElementById("tripForm");
   const tBtn = document.getElementById("tBtn"), tErr = document.getElementById("tErr");
+  const joinForm = document.getElementById("joinForm");
+  const jBtn = document.getElementById("jBtn"), jErr = document.getElementById("jErr");
   if (!LINKS.checkout) {
     tBtn.textContent = "Join the waitlist";
-    document.getElementById("tNote").textContent = "Free. No card needed. We'll email you the day we open.";
-    document.querySelectorAll(".js-signup").forEach(a => { a.href = "#trip"; a.textContent = "Join the waitlist"; });
+    document.getElementById("tNote").textContent = "Free. No card needed. Founding members get their first year for £29.";
+    document.querySelectorAll(".js-signup").forEach(a => { a.href = "#signup"; a.textContent = "Join the waitlist"; });
+    document.getElementById("founding").hidden = false;
+  } else {
+    document.getElementById("joinTitle").textContent = "Start your 7-day free trial";
+    document.getElementById("joinPill").textContent = "£0 today";
+    document.getElementById("perksWaitlist").hidden = true;
+    document.getElementById("perksTrial").hidden = false;
+    jBtn.textContent = "Start my free trial";
   }
+  document.querySelectorAll('a[href="#signup"]').forEach(a => a.addEventListener("click", () => {
+    setTimeout(() => document.getElementById("jHome").focus({ preventScroll: true }), 400);
+  }));
   const isLive = () => /netlify\.app$/.test(location.hostname) || (LINKS.domain && location.hostname.endsWith(LINKS.domain));
   tripForm.addEventListener("submit", async e => {
     e.preventDefault();
@@ -637,16 +725,74 @@ function track(name, data){
     track("waitlist-joined");
   });
 
-  /* Sticky button on phones: appears after the first screen, hides while the sign-up form or pricing is on screen. */
+  /* Hero sign-up: email, home city and airport. Saves to the "waitlist" form, or goes to checkout once payments are live. */
+  joinForm.addEventListener("submit", async e => {
+    e.preventDefault();
+    const home = document.getElementById("jHome").value.trim();
+    const email = document.getElementById("jEmail").value.trim();
+    const problems = [];
+    if (!home) problems.push("where home is");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problems.push("a valid email address");
+    jErr.hidden = !problems.length;
+    if (problems.length) { jErr.textContent = "Please add " + problems.join(" and ") + "."; return; }
+    track("hero-signup", { home: home.slice(0, 40), airport: document.getElementById("jFrom").value, mode: LINKS.checkout ? "trial" : "waitlist" });
+    jBtn.disabled = true; const label = jBtn.textContent; jBtn.textContent = "Saving…";
+    let saved = false;
+    if (isLive()) {
+      try {
+        const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(joinForm)).toString() });
+        saved = res.ok;
+      } catch (err) { saved = false; }
+    }
+    if (LINKS.checkout) {
+      location.href = LINKS.checkout + (LINKS.checkout.includes("?") ? "&" : "?") + "prefilled_email=" + encodeURIComponent(email);
+      return;
+    }
+    jBtn.disabled = false; jBtn.textContent = label;
+    if (isLive() && !saved) { jErr.hidden = false; jErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
+    document.getElementById("jSummary").textContent =
+      `We'll send deals from ${document.getElementById("jFrom").value} to ${home} to ${email}, free through December, and hold your £29 founding price.`;
+    document.getElementById("jPreview").hidden = isLive();
+    const done = document.getElementById("jDone"); done.hidden = false; done.focus();
+    track("waitlist-joined");
+  });
+
+  /* Cookie choice: the Travelpayouts script only loads after "Allow". The choice is remembered in this browser. */
+  const banner = document.getElementById("cookieBanner");
+  const CHOICE_KEY = "hf_cookie_choice";
+  const loadPartnerScript = () => {
+    if (window.__hfPartnerLoaded) return;
+    window.__hfPartnerLoaded = true;
+    const s = document.createElement("script");
+    s.async = true; s.setAttribute("data-cmp-ab", "2");
+    s.src = "https://emrldtp.cc/NTk5NDI1.js?t=599425";
+    document.head.appendChild(s);
+  };
+  let choice = null;
+  try { choice = localStorage.getItem(CHOICE_KEY); } catch (err) {}
+  if (choice === "allow") loadPartnerScript();
+  else if (!choice) banner.hidden = false;
+  const decide = value => {
+    try { localStorage.setItem(CHOICE_KEY, value); } catch (err) {}
+    banner.hidden = true;
+    if (value === "allow") loadPartnerScript();
+    updateSticky();
+  };
+  document.getElementById("ckAccept").addEventListener("click", () => decide("allow"));
+  document.getElementById("ckReject").addEventListener("click", () => decide("reject"));
+  document.getElementById("ckSettings").addEventListener("click", e => { e.preventDefault(); banner.hidden = false; updateSticky(); });
+
+  /* Sticky button on phones: appears after the first screen, hides while a sign-up form, pricing or the cookie choice is on screen. */
   const sticky = document.getElementById("stickyCta");
   const inView = new Set();
-  const updateSticky = () => { sticky.hidden = window.scrollY < 500 || inView.size > 0; };
+  function updateSticky() { sticky.hidden = window.scrollY < 500 || inView.size > 0 || !banner.hidden; }
   if ("IntersectionObserver" in window) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(en => en.isIntersecting ? inView.add(en.target.id) : inView.delete(en.target.id));
       updateSticky();
     });
-    ["trip", "join"].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+    ["trip", "join", "joinForm"].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
   }
   window.addEventListener("scroll", updateSticky, { passive: true });
 
