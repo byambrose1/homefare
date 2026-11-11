@@ -121,3 +121,14 @@ def test_collect_main_with_fake_api(tmp_path, monkeypatch):
     # running twice on the same day doesn't duplicate rows
     assert collect.main() == 0
     assert next((tmp_path / "prices").glob("*.csv")).read_text().count("\n") == 3
+
+
+def test_learning_checks_spread_across_routes():
+    rows = []
+    for m, p in [("2027-01", 600), ("2027-02", 350), ("2027-03", 620), ("2027-04", 640)]:
+        rows.append(row("2026-11-11", p, dest="LOS", month=m))
+    for m, p in [("2027-01", 900), ("2027-02", 880), ("2027-03", 600)]:
+        rows.append(row("2026-11-11", p, dest="KIN", month=m))
+    _, learning, _ = find_deals.analyse(rows, "2026-11-11", RULES, {})
+    first_two = [(l["destination"], l["depart_month"]) for l in learning[:2]]
+    assert first_two == [("LOS", "2027-02"), ("KIN", "2027-03")]

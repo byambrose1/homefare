@@ -20,6 +20,30 @@ from engine.common import (
 BASELINE_FIELDS = ["origin", "destination", "depart_month", "days_of_history", "usual_price", "cheapest_10pct", "lowest", "today_price"]
 
 
+def rank_learning(learning: list[dict]) -> list[dict]:
+    """Order learning route-months so the spare live checks are spent well.
+
+    Score: how far below its own history today's fare is (once 3+ days exist), otherwise how far below
+    the same route's other travel months it is today ("this month is unusually cheap for this route").
+    Then keep only the best month per route first, so a day's checks cover different routes.
+    """
+    by_route: dict[tuple, list[dict]] = defaultdict(list)
+    for item in learning:
+        by_route[(item["origin"], item["destination"])].append(item)
+    for items in by_route.values():
+        route_median = median([i["price"] for i in items])
+        for i in items:
+            vs_months = 1 - i["price"] / route_median if len(items) >= 3 else 0.0
+            i["pct_below_other_months"] = round(vs_months, 3)
+            i["score"] = i["pct_below_so_far"] if i["pct_below_so_far"] is not None else vs_months
+    best_per_route = [max(items, key=lambda i: i["score"]) for items in by_route.values()]
+    best_ids = {id(i) for i in best_per_route}
+    rest = [i for i in learning if id(i) not in best_ids]
+    best_per_route.sort(key=lambda i: i["score"], reverse=True)
+    rest.sort(key=lambda i: i["score"], reverse=True)
+    return best_per_route + rest
+
+
 def analyse(rows: list[dict], today: str, rules: dict, dest_names: dict[str, str]) -> tuple[list[dict], list[dict], list[dict]]:
     # cheapest price per (route-month, day)
     daily: dict[tuple, dict[str, float]] = defaultdict(dict)
@@ -69,7 +93,7 @@ def analyse(rows: list[dict], today: str, rules: dict, dest_names: dict[str, str
             candidates.append(info)
 
     candidates.sort(key=lambda c: c["pct_below"], reverse=True)
-    learning.sort(key=lambda c: (c["pct_below_so_far"] is None, -(c["pct_below_so_far"] or 0)))
+    learning = rank_learning(learning)
     baselines.sort(key=lambda b: (b["origin"], b["destination"], b["depart_month"]))
     return candidates, learning, baselines
 
