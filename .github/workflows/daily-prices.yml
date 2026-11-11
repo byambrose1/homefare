@@ -1,0 +1,53 @@
+name: Daily prices
+
+# Runs every morning at 05:00 UTC, and whenever you press "Run workflow" on the Actions tab.
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-prices
+  cancel-in-progress: false
+
+jobs:
+  prices:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TRAVELPAYOUTS_TOKEN: ${{ secrets.TRAVELPAYOUTS_TOKEN }}
+      SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: pip install -r requirements.txt pytest
+
+      - name: Test the engine
+        run: python -m pytest -q
+
+      - name: 1. Collect today's prices (Travelpayouts)
+        run: python -m engine.collect
+
+      - name: 2. Find candidate deals
+        run: python -m engine.find_deals
+
+      - name: 3. Check candidates live (Google Flights via SerpApi)
+        if: env.SERPAPI_KEY != ''
+        run: python -m engine.live_check
+
+      - name: Save results to the repository
+        run: |
+          git config user.name "homefare-bot"
+          git config user.email "homefare-bot@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || git commit -m "Prices for $(date -u +%Y-%m-%d)"
+          git pull --rebase --autostash
+          git push

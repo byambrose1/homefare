@@ -1,0 +1,660 @@
+<!doctype html><html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style><title>HomeFare</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Cheap flights home from the UK. We watch fares to 50 cities across Africa, South Asia, the Caribbean and beyond, and tell you when they drop well below normal.">
+<!-- Travelpayouts Drive (affiliate partner verification). Features switched off in the Travelpayouts dashboard. -->
+<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+  (function () {
+      var script = document.createElement("script");
+      script.async = 1;
+      script.setAttribute("data-cmp-ab","2");
+      script.src = 'https://emrldtp.cc/NTk5NDI1.js?t=599425';
+      document.head.appendChild(script);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=Permanent+Marker&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: one human hero (the family chat where the deal lands), the striped "Ghana Must Go" bag as the brand texture,
+   the boarding-pass alert as the proof, routes as hand-labelled luggage tags. */
+:root{
+  --bg:#FFFFFF; --soft:#F2F5FB; --ink:#14213D; --muted:#59647A; --line:#E2E6EE;
+  --blue:#1F4FA0; --red:#D2362B; --gold:#F2B705; --gold-ink:#231A00;
+  --chat:#E9EDF3; --mine:#DCEAFE; --phone:#14213D;
+  --sans:"Familjen Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --marker:"Permanent Marker","Comic Sans MS","Marker Felt",cursive;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E1424; --soft:#151D33; --ink:#EEF1F7; --muted:#A3ADC2; --line:#263150;
+  --blue:#7CA4F0; --red:#F06A5F; --gold:#F5C12E; --gold-ink:#231A00;
+  --chat:#1E2843; --mine:#1E3566; --phone:#05080F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1424; --soft:#151D33; --ink:#EEF1F7; --muted:#A3ADC2; --line:#263150;
+  --blue:#7CA4F0; --red:#F06A5F; --gold:#F5C12E; --gold-ink:#231A00;
+  --chat:#1E2843; --mine:#1E3566; --phone:#05080F; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.55;margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;text-wrap:balance;letter-spacing:-.02em;line-height:1.05}
+h1{font-size:clamp(2.5rem,6.2vw,4.4rem);font-weight:700}
+h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700;letter-spacing:-.01em}
+p{margin:0}
+.muted{color:var(--muted)}
+.scrawl{font-family:var(--marker);font-weight:400;letter-spacing:0;color:var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;font-weight:700;text-decoration:none;border-radius:12px;padding:.9rem 1.35rem;border:2px solid transparent;font-size:1rem;font-family:var(--sans);cursor:pointer}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{filter:brightness(1.1)}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--bg)}
+.btn-line:hover{border-color:var(--ink)}
+.btn:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* bag stripe: red/blue/white check */
+.bag{height:28px;background:
+  repeating-linear-gradient(90deg,transparent 0 14px,rgba(210,54,43,.9) 14px 20px,transparent 20px 34px,rgba(31,79,160,.95) 34px 44px,transparent 44px 58px),
+  repeating-linear-gradient(0deg,rgba(210,54,43,.55) 0 3px,transparent 3px 9px,rgba(31,79,160,.6) 9px 14px,transparent 14px 28px),#fff}
+
+/* header */
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:16px}
+.logo{display:flex;align-items:baseline;gap:2px;text-decoration:none;font-weight:700;font-size:1.45rem;letter-spacing:-.03em;color:var(--ink)}
+.logo b{color:var(--red);font-family:var(--marker);font-weight:400;font-size:1.55rem;transform:rotate(-4deg);display:inline-block}
+header .btn{padding:.6rem 1rem;font-size:.95rem}
+
+/* hero */
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(28px,5vw,64px) clamp(40px,6vw,80px)}
+.hero-copy{display:flex;flex-direction:column;gap:22px;min-width:0}
+.hero h1 .scrawl{display:block;font-size:.82em;margin-top:.15em;transform:rotate(-2deg);transform-origin:left}
+.hero .lead{font-size:1.18rem;color:var(--muted);max-width:44ch}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.small{font-size:.92rem;color:var(--muted)}
+
+/* phone + family chat */
+.phone{justify-self:center;width:min(360px,100%);background:var(--phone);border-radius:38px;padding:12px;box-shadow:0 30px 60px -30px rgba(20,33,61,.55)}
+.screen{background:var(--bg);border-radius:28px;overflow:hidden}
+.chat-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.avatar{width:36px;height:36px;border-radius:50%;flex:none;background:
+  repeating-linear-gradient(90deg,transparent 0 5px,var(--red) 5px 7px,transparent 7px 11px,var(--blue) 11px 14px,transparent 14px 18px),
+  repeating-linear-gradient(0deg,rgba(210,54,43,.5) 0 2px,transparent 2px 5px,rgba(31,79,160,.6) 5px 7px,transparent 7px 12px),#fff}
+.chat-head b{display:block;font-size:.98rem;line-height:1.2}
+.chat-head span{font-size:.78rem;color:var(--muted)}
+.msgs{display:flex;flex-direction:column;gap:8px;padding:14px 12px 16px;font-size:.92rem;line-height:1.4}
+.m{max-width:82%;background:var(--chat);border-radius:14px 14px 14px 4px;padding:8px 11px}
+.m i{display:block;font-style:normal;font-weight:700;font-size:.76rem;margin-bottom:1px}
+.m.a i{color:#B4572E}.m.b i{color:#2C7A55}.m.c i{color:#7A3FA0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .m.a i{color:#F0A27E}:root:not([data-theme="light"]) .m.b i{color:#7FD3A8}:root:not([data-theme="light"]) .m.c i{color:#C9A0F0}}
+:root[data-theme="dark"] .m.a i{color:#F0A27E}:root[data-theme="dark"] .m.b i{color:#7FD3A8}:root[data-theme="dark"] .m.c i{color:#C9A0F0}
+.m.me{align-self:flex-end;background:var(--mine);border-radius:14px 14px 4px 14px}
+.fwd{align-self:flex-end;max-width:88%;background:var(--mine);border-radius:14px 14px 4px 14px;padding:8px}
+.fwd small{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin:0 3px 6px}
+.mini{background:var(--bg);border-radius:10px;padding:10px 12px;border-left:4px solid var(--blue)}
+.mini .r{font-family:var(--mono);font-weight:600;font-size:.9rem}
+.mini .p{display:flex;align-items:baseline;gap:8px;margin-top:2px}
+.mini .p b{font-size:1.5rem;letter-spacing:-.02em}
+.mini .p s{color:var(--muted);font-size:.85rem}
+.mini .sv{font-size:.8rem;font-weight:700;color:var(--blue)}
+.illus{font-size:.75rem;color:var(--muted);text-align:center;margin-top:10px}
+
+/* section rhythm */
+section{padding-block:clamp(56px,8vw,96px)}
+.head{display:grid;gap:12px;max-width:640px;margin-bottom:40px}
+
+/* the alert (boarding pass) */
+.alert-sec .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.pass{background:var(--bg);border:1px solid var(--line);border-radius:18px;box-shadow:0 18px 44px -26px rgba(20,33,61,.5);overflow:hidden;min-width:0;max-width:100%}
+.pass-top{background:var(--blue);color:#fff;padding:12px 20px;display:flex;flex-wrap:wrap;gap:4px 12px;justify-content:space-between;font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.pass-body{padding:20px 22px;display:grid;gap:16px}
+.route{display:grid;grid-template-columns:1fr auto 1fr;align-items:end;gap:10px}
+.route>div{min-width:0}
+.code{font-family:var(--mono);font-weight:600;font-size:clamp(2.2rem,9vw,3rem);line-height:.95;letter-spacing:-.02em}
+.city{font-size:.85rem;color:var(--muted)}
+.route .to{text-align:right}
+.plane{color:var(--red);padding-bottom:8px}.plane svg{width:30px;height:30px}
+.fields{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0;font-size:.9rem}
+.fields dt{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.fields dd{margin:2px 0 0;font-weight:600}
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -8px 24px -16px rgba(20,33,61,.5);
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.sticky-cta span{font-size:.9rem;min-width:0}
+.sticky-cta .btn{padding:.65rem 1rem;font-size:.95rem;flex:none}
+@media (min-width:881px){.sticky-cta{display:none!important}}
+footer{padding-bottom:72px}
+.checked{margin:0;font-family:var(--mono);font-size:.75rem;color:var(--muted)}
+.perf{border:0;border-top:2px dashed var(--line);margin:0 -22px}
+.prices{display:flex;justify-content:space-between;align-items:flex-end;gap:12px;flex-wrap:wrap}
+.was{color:var(--muted);text-decoration:line-through;font-size:1.05rem}
+.now{font-weight:700;font-size:2.9rem;line-height:1;letter-spacing:-.03em}
+.save{background:var(--gold);color:var(--gold-ink);font-weight:700;border-radius:10px;padding:8px 12px;font-size:.92rem;line-height:1.35}
+.pass-foot{font-size:.78rem;color:var(--muted);padding:0 22px 16px}
+.points{display:grid;gap:18px;margin:0;padding:0;list-style:none}
+.points li{display:grid;gap:4px;padding-left:18px;border-left:3px solid var(--red)}
+
+/* things only we'd think of */
+.soft{background:var(--soft)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 32px}
+.grid3 > div{display:grid;gap:8px;align-content:start}
+.grid3 .scrawl{font-size:1.5rem;line-height:1.1}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,56px);align-items:center}
+.calc form{display:grid;gap:18px}
+.field{display:grid;gap:6px}
+.field label{font-weight:600}
+.field input{font:600 1.25rem var(--mono);padding:.65rem .85rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;max-width:240px}
+.field input[type=range]{padding:0;border:0;background:transparent;max-width:100%;accent-color:var(--blue)}
+.range-row{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.82rem;color:var(--muted)}
+.receipt{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:26px 24px 30px;font-family:var(--mono);display:grid;gap:10px;position:relative;
+  -webkit-mask:radial-gradient(circle at 8px 100%,transparent 7px,#000 7.5px) 0 0/16px 100% repeat-x;mask:radial-gradient(circle at 8px 100%,transparent 7px,#000 7.5px) 0 0/16px 100% repeat-x}
+.receipt .row{display:flex;justify-content:space-between;gap:12px;font-size:.95rem}
+.receipt hr{border:0;border-top:2px dashed var(--line);margin:4px 0;width:100%}
+.receipt .total{font-family:var(--sans);font-weight:700;font-size:clamp(2.6rem,7vw,3.6rem);letter-spacing:-.03em;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+.receipt small{font-family:var(--sans);color:var(--muted);font-size:.8rem}
+
+/* luggage tags */
+.tags{display:flex;flex-wrap:wrap;gap:18px}
+.tag{position:relative;background:#FFF6D6;color:#14213D;border-radius:6px 14px 14px 6px;padding:14px 18px 14px 34px;min-width:150px;display:grid;gap:2px;box-shadow:0 8px 18px -12px rgba(20,33,61,.5)}
+.tag:nth-child(odd){transform:rotate(-2deg)}.tag:nth-child(3n){transform:rotate(1.5deg)}
+.tag::before{content:"";position:absolute;left:12px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px #C9B57A}
+.tag .c{font-family:var(--mono);font-weight:600;font-size:1.6rem;line-height:1}
+.tag .n{font-family:var(--marker);font-size:1.05rem;color:#B12A20}
+.tag .s{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.tag.live .s{color:#1D7A4C}
+.tag.soon{background:#EEF0F4}.tag.soon .s{color:#6A7386}
+.tags-note{margin-top:22px}
+.regions{display:grid;gap:30px}
+.region h3{margin-bottom:14px}
+.region .tags{gap:14px}
+.region .tag{min-width:132px;padding:10px 14px 10px 30px}
+.region .tag .c{font-size:1.25rem}
+.region .tag .n{font-size:.98rem}
+.region .tag::before{left:10px}
+
+/* pricing */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.plan{border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:14px;align-content:start;background:var(--bg)}
+.plan.pro{border:2px solid var(--blue);position:relative}
+.plans.three{grid-template-columns:repeat(3,1fr)}
+.small a,.promise a{color:var(--blue)}
+.plan.guarantee{background:var(--soft);border:2px dashed var(--line);align-content:center}
+.flag{position:absolute;top:-13px;left:24px;background:var(--blue);color:#fff;font-size:.75rem;font-weight:700;border-radius:999px;padding:3px 10px}
+.trip{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.trip-form{background:var(--soft);border-radius:18px;padding:clamp(18px,3vw,28px);display:grid;gap:16px}
+.tf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.trip-form .field input,.trip-form select{font:500 1rem var(--sans);padding:.7rem .8rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;max-width:none}
+.t-done{display:grid;gap:10px;background:var(--bg);border:2px solid var(--blue);border-radius:14px;padding:18px}
+.price{font-weight:700;font-size:2.8rem;line-height:1;letter-spacing:-.03em}
+.price small{font-size:1rem;font-weight:500;color:var(--muted);letter-spacing:0}
+.plan ul{margin:0;padding-left:1.1rem;display:grid;gap:6px}
+.promise{margin-top:22px;display:grid;grid-template-columns:auto 1fr;gap:6px 20px;align-items:start;border-top:1px solid var(--line);padding-top:22px}
+.promise .scrawl{font-size:1.4rem;line-height:1.1;max-width:9ch}
+.promise ul{margin:0;padding-left:1.1rem;display:grid;gap:4px}
+.setup-note{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-top:16px}
+
+/* faq */
+.faq{max-width:760px}
+details{border-bottom:1px solid var(--line);padding-block:14px}
+summary{font-weight:700;cursor:pointer}
+details p{color:var(--muted);margin-top:8px}
+
+.final{background:var(--blue);color:#fff}
+.final .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;padding-block:56px}
+.final h2{max-width:17ch}
+.final .scrawl{color:var(--gold)}
+.final .btn-primary{background:#fff;color:#1F4FA0}
+.final .btn-line{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:.85rem;color:var(--muted)}
+
+@media (max-width:880px){
+  .hero .wrap,.alert-sec .wrap,.calc,.plans,.plans.three,.trip{grid-template-columns:1fr}
+  .grid3{grid-template-columns:1fr}
+  .promise{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){
+  .msgs > *{animation:pop .5s ease both}
+  .msgs > *:nth-child(2){animation-delay:.15s}.msgs > *:nth-child(3){animation-delay:.3s}
+  .msgs > *:nth-child(4){animation-delay:.6s}.msgs > *:nth-child(5){animation-delay:.9s}
+  @keyframes pop{from{transform:translateY(6px)}to{transform:none}}
+}
+</style></head><body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="HomeFare home">Home<b>Fare</b></a>
+    <a class="btn btn-primary js-signup" data-track="trial-header" href="#join">Start free trial</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1>Mum keeps asking when you're coming home. <span class="scrawl">We'll tell you when it's cheap.</span></h1>
+        <p class="lead">HomeFare checks flights from UK airports to 50 cities across Africa, South Asia, the Caribbean and beyond. When a fare home drops well below normal, it lands in your inbox.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary js-signup" data-track="trial-hero" href="#join">Start your 7-day free trial</a>
+          <a class="btn btn-line" href="#example">See an example alert</a>
+        </div>
+        <p class="small">Then £49 a year. Cancel in one click. Save £300 in your first year or your money back. <a href="#trip" data-track="tripwatch-hero">Already know your dates?</a></p>
+      </div>
+
+      <div>
+        <div class="phone" role="img" aria-label="Illustration: a family group chat where someone shares a HomeFare deal from Manchester for £520, usually £780">
+          <div class="screen">
+            <div class="chat-head"><div class="avatar"></div><div><b>Family</b><span>Mum, Dad, your brother, you</span></div></div>
+            <div class="msgs">
+              <div class="m a"><i>Mum</i>So when are you all coming home? It's been two years</div>
+              <div class="m b"><i>Brother</i>Have you seen the prices though? £750+ each</div>
+              <div class="fwd"><small>Forwarded from HomeFare</small>
+                <div class="mini"><div class="r">MAN → home · Mar–Apr</div><div class="p"><b>£520</b><s>usually £780</s></div><div class="sv">Save £260 each</div></div>
+              </div>
+              <div class="m me">Booked for March. Tell everyone we're coming 😄</div>
+              <div class="m c"><i>Dad</i>Finally!</div>
+            </div>
+          </div>
+        </div>
+        <p class="illus">Illustration. Prices shown are an example.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bag" role="presentation"></div>
+
+  <section class="alert-sec" id="example">
+    <div class="wrap">
+      <figure class="pass" aria-label="Example deal alert" style="margin:0">
+        <div class="pass-top"><span>Example alert</span><span>Economy return</span></div>
+        <div class="pass-body">
+          <div class="route">
+            <div><div class="code">LHR</div><div class="city">London Heathrow</div></div>
+            <div class="plane" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5Z"/></svg></div>
+            <div class="to"><div class="code">LOS</div><div class="city">Lagos</div></div>
+          </div>
+          <dl class="fields">
+            <div><dt>Travel</dt><dd>Feb – Mar</dd></div>
+            <div><dt>Stops</dt><dd>Direct</dd></div>
+            <div><dt>Bags</dt><dd>2 × 23kg</dd></div>
+          </dl>
+          <p class="checked">Price checked 10 Nov, 9:14am · Example dates: 18 Feb – 4 Mar</p>
+          <hr class="perf">
+          <div class="prices">
+            <div><div class="was">Usually £720</div><div class="now">£430</div></div>
+            <div class="save">£290 off each<br>£1,160 for a family of 4</div>
+          </div>
+        </div>
+        <figcaption class="pass-foot">Illustrative example. Real alerts use prices we've checked that day.</figcaption>
+      </figure>
+      <div style="display:grid;gap:24px;min-width:0">
+        <div class="head" style="margin:0">
+          <h2>Every alert shows what you actually save.</h2>
+          <p class="muted">No "up to 90% off" nonsense. You see the normal price, the deal price and the difference.</p>
+        </div>
+        <ul class="points">
+          <li><b>We know what normal costs</b><span class="muted">We log fares on your routes every day, so "usually £720" is a real number from our own tracking.</span></li>
+          <li><b>Only real drops make the cut</b><span class="muted">We send a fare only when it's at least 25% below that route's normal price.</span></li>
+          <li><b>Dates and bags included</b><span class="muted">Example dates to search, the airline, stops, and how many bags you get.</span></li>
+          <li><b>Time-stamped</b><span class="muted">Every alert says when we checked the price, so you know how fresh it is.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="wrap">
+      <div class="head">
+        <h2>Built for flying home, not for city breaks.</h2>
+        <p class="muted">Big deal sites send you Barcelona and Bali. We only care about the flights you actually take.</p>
+      </div>
+      <div class="grid3">
+        <div><span class="scrawl">Christmas is coming</span><p>December fares climb early. We tell you when Christmas, Easter, Eid and summer prices start rising, so you book before they do.</p></div>
+        <div><span class="scrawl">2 × 23kg, please</span><p>You're not going home with hand luggage. Every alert shows the bag allowance, so a cheap fare doesn't turn expensive at check-in.</p></div>
+        <div><span class="scrawl">Not just Heathrow</span><p>Manchester, Birmingham, Gatwick, Stansted. Sometimes the cheapest way home is from the airport you'd never think to check.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="savings">
+    <div class="wrap calc">
+      <div style="display:grid;gap:22px;min-width:0">
+        <div class="head" style="margin:0">
+          <h2>What did you pay last time?</h2>
+          <p class="muted">Put in your last return fare and see what a deal would have saved your family.</p>
+        </div>
+        <form id="calc" novalidate>
+          <div class="field">
+            <label for="fare">Return fare per person (£)</label>
+            <input id="fare" type="number" inputmode="numeric" min="50" max="5000" step="10" value="750">
+          </div>
+          <div class="field">
+            <label for="people">How many of you travelled?</label>
+            <input id="people" type="number" inputmode="numeric" min="1" max="12" step="1" value="4">
+          </div>
+          <div class="field">
+            <label for="drop">If you'd caught a deal <span id="dropOut">30%</span> below normal</label>
+            <input id="drop" type="range" min="25" max="50" step="5" value="30">
+            <div class="range-row"><span>25%</span><span>50%</span></div>
+          </div>
+        </form>
+      </div>
+      <div class="receipt" aria-live="polite">
+        <div class="row"><span>You paid</span><span id="paidOut">£3,000</span></div>
+        <div class="row"><span>With a deal</span><span id="dealOut">£2,100</span></div>
+        <hr>
+        <span>You'd have kept</span>
+        <span class="total" id="saveOut">£900</span>
+        <small id="detailOut">That's £225 back on each of 4 tickets.</small>
+        <small>Estimate only. How often deals appear varies by route and season.</small>
+      </div>
+    </div>
+  </section>
+
+  <section id="routes" class="soft">
+    <div class="wrap">
+      <div class="head">
+        <h2>Where's home?</h2>
+        <p class="muted"><span id="destCount">50</span> cities across Africa, South Asia, the Caribbean, the Middle East and East Asia. Search for yours.</p>
+      </div>
+      <div class="field" style="margin-bottom:26px">
+        <label for="destSearch">City or airport code</label>
+        <input id="destSearch" type="search" placeholder="e.g. Kingston, Lahore, NBO" autocomplete="off" style="max-width:360px;font-family:var(--sans)">
+      </div>
+      <div id="regions" class="regions"></div>
+      <p id="noMatch" class="small" hidden>We're not watching that one yet. Tell us after you sign up and we'll add it. If we can't, cancel during your trial and you pay nothing.</p>
+      <p class="tags-note small">From London Heathrow, Gatwick and Stansted, Manchester and Birmingham. More UK airports coming.</p>
+    </div>
+  </section>
+
+  <section id="trip">
+    <div class="wrap trip">
+      <div style="display:grid;gap:14px;min-width:0">
+        <h2>Already know when you're going?</h2>
+        <p class="muted">Tell us your trip. Trip Watch checks your exact route and dates every day and tells you the moment the price drops, or warns you if it's about to rise.</p>
+        <p class="small">Included in every membership. Watch as many trips as you like.</p>
+      </div>
+      <form id="tripForm" class="trip-form" name="trip" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="trip">
+        <p hidden><label>Leave this empty <input name="bot-field"></label></p>
+        <div class="tf-row">
+          <div class="field"><label for="tFrom">Flying from</label>
+            <select id="tFrom" name="from"><option>London Heathrow</option><option>London Gatwick</option><option>London Stansted</option><option>Manchester</option><option>Birmingham</option><option>Other UK airport</option></select></div>
+          <div class="field"><label for="tTo">Going to</label>
+            <input id="tTo" name="to" list="destList" placeholder="Start typing a city" autocomplete="off"><datalist id="destList"></datalist></div>
+        </div>
+        <div class="tf-row">
+          <div class="field"><label for="tWhen">When</label><select id="tWhen" name="month"><option value="not-sure">Not sure yet</option></select></div>
+          <div class="field"><label for="tPeople">Travellers</label><input id="tPeople" name="travellers" type="number" inputmode="numeric" min="1" max="20" value="2"></div>
+        </div>
+        <div class="field"><label for="tDates">Your dates are</label>
+          <select id="tDates" name="dates"><option value="fixed">Fixed (e.g. Christmas, a wedding)</option><option value="flexible">Flexible by a week or two</option><option value="very-flexible">Very flexible</option></select></div>
+        <div class="field"><label for="tEmail">Your email</label>
+          <input id="tEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></div>
+        <button id="tBtn" class="btn btn-primary" type="submit" style="width:100%">Start free trial and watch this trip</button>
+        <p id="tNote" class="small" style="text-align:center">7 days free, then £49 a year. Cancel in one click.</p>
+        <p id="tErr" class="small" hidden style="color:var(--red)" role="alert"></p>
+        <div id="tDone" class="t-done" hidden tabindex="-1">
+          <b>You're on the waitlist.</b>
+          <p id="tSummary"></p>
+          <p class="small">We'll email you the day HomeFare opens, with your first week free. Nothing has been charged and we don't need your card.</p>
+          <p id="tPreview" class="small" hidden>Preview only: on your live site, this saves to your waitlist.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="open" class="soft">
+    <div class="wrap">
+      <div class="head">
+        <h2>No small print. No surprises.</h2>
+        <p class="muted">Deal clubs have a reputation for surprise charges and deals that vanish. We built HomeFare to be the opposite, and we publish the numbers to prove it.</p>
+      </div>
+      <div class="grid3">
+        <div><span class="scrawl">Time-stamped prices</span><p>Every alert says exactly when we checked the price, with example dates that worked. No old screenshots, no made-up "was" prices.</p></div>
+        <div><span class="scrawl">A public deal log</span><p>Every deal we send goes in a public log: the price, when we found it, and whether it was still bookable 24 hours later.</p></div>
+        <div><span class="scrawl">Our numbers, monthly</span><p>Average saving per alert, refunds given, cancellations and how fast we reply to emails. Published every month, good or bad.</p></div>
+      </div>
+      <div class="grid3" style="margin-top:28px">
+        <div><span class="scrawl">Reminders, not traps</span><p>We email you when your trial starts and again before it ends, with the exact amount and date.</p></div>
+        <div><span class="scrawl">One-click cancel</span><p>A cancel link in every email. Cancel and the emails and charges stop, with a confirmation so you know it's done.</p></div>
+        <div><span class="scrawl">Real replies</span><p>Email us and a real person replies within one working day.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap">
+      <div class="head"><h2>One membership. Pays for itself on one flight.</h2></div>
+      <div class="plans">
+        <div class="plan pro">
+          <span class="flag">7 days free</span>
+          <h3>HomeFare membership</h3>
+          <div class="price">£49 <small>a year</small></div>
+          <p class="muted" style="font-size:.95rem">That's under £1 a week. Less than one checked bag.</p>
+          <ul><li>Deals home from your UK airports, as soon as we find them</li><li>Trip Watch on your exact route and dates, as many trips as you like</li><li>"Book now or wait?" advice for Christmas, Easter, Eid and summer</li><li>Bag allowance and example dates in every alert</li></ul>
+          <a class="btn btn-primary js-signup" data-track="trial-plan" href="#join">Start your 7-day free trial</a>
+          <p class="small">£0 today. £49 after 7 days unless you cancel.</p>
+        </div>
+        <div class="plan guarantee">
+          <span class="scrawl" style="font-size:1.6rem">Save £300 or it's free</span>
+          <p>If you don't save at least £300 on flights in your first year of membership, email us and we'll refund your £49 in full.</p>
+          <p class="small">Savings are measured against the "usual price" shown in the alerts you booked from.</p>
+        </div>
+      </div>
+      <div class="promise">
+        <span class="scrawl">Our promise</span>
+        <ul>
+          <li>We email you when your trial starts and again before it ends, so you're never charged by surprise.</li>
+          <li>We email you again 7 days before each yearly renewal.</li>
+          <li>Cancel in one click from your account link. No forms, no chasing.</li>
+          <li>Changed your mind after paying? Full refund within 14 days.</li>
+        </ul>
+        <p class="small" style="grid-column:1/-1">Already a member? <a class="js-portal" href="#join">Manage or cancel your membership</a></p>
+      </div>
+      <p class="setup-note" id="setupNote" hidden>Setup: checkout and cancel links not added yet. Edit the LINKS section at the bottom of this file.</p>
+    </div>
+  </section>
+
+  <section id="faq" style="padding-top:0">
+    <div class="wrap">
+      <div class="head"><h2>Questions</h2></div>
+      <div class="faq">
+        <details><summary>Do you sell flights?</summary><p>No. We find the deal and send you the details and a link. You book directly with the airline or a trusted booking site, so your ticket is theirs, not ours.</p></details>
+        <details><summary>What counts as a deal?</summary><p>We track each route every day and work out its normal price for that time of year. We only send fares at least 25% below that.</p></details>
+        <details><summary>How does the free trial work?</summary><p>You get 7 days of full membership for £0. We email you when it starts and again before it ends. If you do nothing, you're charged £49 for the year. Cancel any time before then and you pay nothing.</p></details>
+        <details><summary>How do I cancel?</summary><p>Use the "Manage or cancel" link in any of our emails or at the bottom of this page. It takes one click. No forms, no phone calls.</p></details>
+        <details><summary>How does the £300 guarantee work?</summary><p>If your first year of alerts doesn't save you at least £300 on flights you booked, email us before your renewal and we'll refund the £49.</p></details>
+        <details><summary>How do I contact you?</summary><p>Email us any time. A real person replies within one working day.</p></details>
+        <details><summary>How fast do deals go?</summary><p>Some last weeks, some last hours. Fares can change before you book, which is why we send alerts the moment we find them.</p></details>
+        <details><summary>Can you get me cheap flights for Christmas?</summary><p>December is the most expensive time to fly home. The best way to save is to book early. Our peak-season warnings tell you when Christmas fares start rising.</p></details>
+        <details><summary>Which airports do you cover?</summary><p>London Heathrow, Gatwick and Stansted, Manchester and Birmingham to start, with more UK airports on the way. Tell us yours when you sign up.</p></details>
+        <details><summary>My city isn't listed. Can you add it?</summary><p>Yes. Tell us when you sign up. We add new cities based on what members ask for.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <div class="bag" role="presentation"></div>
+  <div class="final">
+    <div class="wrap">
+      <h2>Next time you fly home, <span class="scrawl">pay less.</span></h2>
+      <div class="cta-row">
+        <a class="btn btn-primary js-signup" data-track="trial-footer" href="#join">Start your 7-day free trial</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<div id="stickyCta" class="sticky-cta" hidden>
+  <span><b>HomeFare</b> · cheap flights home</span>
+  <a class="btn btn-primary js-signup" data-track="trial-sticky" href="#join">Start free trial</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr">2026</span> HomeFare. We're not a travel agent and don't sell tickets.</span>
+    <span>Fares change quickly. Always check the final price before you book. We count visits with cookie-free analytics. Our travel partner Travelpayouts also runs a script on this site.</span>
+  </div>
+</footer>
+
+<script>
+/* ===== LINKS: paste your own links here before you go live ===== */
+const LINKS = {
+  checkout: "",  // your Stripe Payment Link with the 7-day trial, e.g. https://buy.stripe.com/xxxx
+  portal: "",    // your Stripe customer portal link, e.g. https://billing.stripe.com/p/login/xxxx
+  umamiId: "",   // your Umami "Website ID", e.g. 1a2b3c4d-....  (free at umami.is)
+  domain: ""     // your own domain once you have one, e.g. homefare.co.uk
+};
+/* No checkout link yet? The site runs in waitlist mode: every button collects emails and trips instead. */
+/* =============================================================== */
+
+/* Analytics: loads only when an Umami ID is set. Counts visits and the clicks we test. */
+(function(){
+  if (!LINKS.umamiId) return;
+  const s = document.createElement("script");
+  s.defer = true; s.src = "https://cloud.umami.is/script.js";
+  s.setAttribute("data-website-id", LINKS.umamiId);
+  document.head.appendChild(s);
+})();
+function track(name, data){
+  try { if (window.umami && typeof window.umami.track === "function") window.umami.track(name, data); } catch(e){}
+}
+
+(function(){
+  document.addEventListener("click", e => {
+    const a = e.target.closest("a,button"); if (!a) return;
+    if (a.dataset.track) track(a.dataset.track);
+    else if (a.classList.contains("js-signup")) track("trial-click");
+    else if (a.classList.contains("js-portal")) track("portal-click");
+  });
+  const setLink = (sel, url) => document.querySelectorAll(sel).forEach(a => {
+    if (url) { a.href = url; a.rel = "noopener"; }
+  });
+  setLink(".js-signup", LINKS.checkout);
+  setLink(".js-portal", LINKS.portal);
+  if (!LINKS.checkout || !LINKS.portal) document.getElementById("setupNote").hidden = false;
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  const gbp = n => "£" + Math.round(n).toLocaleString("en-GB");
+  const fare = document.getElementById("fare"), people = document.getElementById("people"), drop = document.getElementById("drop");
+  function calc(){
+    const f = Math.min(Math.max(parseFloat(fare.value) || 0, 0), 20000);
+    const p = Math.min(Math.max(parseInt(people.value, 10) || 1, 1), 50);
+    const d = parseInt(drop.value, 10) / 100;
+    const each = f * d;
+    document.getElementById("dropOut").textContent = Math.round(d * 100) + "%";
+    document.getElementById("paidOut").textContent = gbp(f * p);
+    document.getElementById("dealOut").textContent = gbp((f - each) * p);
+    document.getElementById("saveOut").textContent = gbp(each * p);
+    document.getElementById("detailOut").textContent = f > 0
+      ? `That's ${gbp(each)} back on each of ${p} ticket${p > 1 ? "s" : ""}.`
+      : "Enter what you paid per person to see your saving.";
+  }
+  /* Destinations: add or remove cities here */
+  const DESTS = {
+    "West Africa": [["LOS","Lagos"],["ABV","Abuja"],["PHC","Port Harcourt"],["ACC","Accra"],["FNA","Freetown"],["BJL","Banjul"],["DSS","Dakar"],["DLA","Douala"]],
+    "East & Southern Africa": [["NBO","Nairobi"],["EBB","Entebbe"],["ADD","Addis Ababa"],["HGA","Hargeisa"],["KGL","Kigali"],["HRE","Harare"],["LUN","Lusaka"],["JNB","Johannesburg"]],
+    "South Asia": [["ISB","Islamabad"],["LHE","Lahore"],["KHI","Karachi"],["PEW","Peshawar"],["DEL","Delhi"],["BOM","Mumbai"],["ATQ","Amritsar"],["AMD","Ahmedabad"],["HYD","Hyderabad"],["BLR","Bengaluru"],["MAA","Chennai"],["COK","Kochi"],["DAC","Dhaka"],["ZYL","Sylhet"],["CMB","Colombo"],["KTM","Kathmandu"]],
+    "Caribbean & South America": [["KIN","Kingston"],["MBJ","Montego Bay"],["BGI","Barbados"],["POS","Port of Spain"],["UVF","St Lucia"],["ANU","Antigua"],["GND","Grenada"],["GEO","Georgetown"]],
+    "Middle East & North Africa": [["CAI","Cairo"],["CMN","Casablanca"],["ALG","Algiers"],["IST","Istanbul"],["EBL","Erbil"],["AMM","Amman"]],
+    "East & Southeast Asia": [["HKG","Hong Kong"],["MNL","Manila"],["SGN","Ho Chi Minh City"],["KUL","Kuala Lumpur"]]
+  };
+  const regionsEl = document.getElementById("regions");
+  let total = 0;
+  for (const [region, list] of Object.entries(DESTS)) {
+    const sec = document.createElement("div"); sec.className = "region";
+    const h = document.createElement("h3"); h.textContent = region; sec.appendChild(h);
+    const wrap = document.createElement("div"); wrap.className = "tags";
+    for (const [code, city] of list) {
+      const t = document.createElement("div"); t.className = "tag live";
+      t.dataset.q = (code + " " + city).toLowerCase();
+      const c = document.createElement("span"); c.className = "c"; c.textContent = code;
+      const n = document.createElement("span"); n.className = "n"; n.textContent = city;
+      t.append(c, n); wrap.appendChild(t); total++;
+    }
+    sec.appendChild(wrap); regionsEl.appendChild(sec);
+  }
+  document.getElementById("destCount").textContent = total;
+  document.getElementById("destSearch").addEventListener("input", e => {
+    const q = e.target.value.trim().toLowerCase(); let shown = 0;
+    regionsEl.querySelectorAll(".region").forEach(sec => {
+      let any = 0;
+      sec.querySelectorAll(".tag").forEach(t => { const ok = !q || t.dataset.q.includes(q); t.hidden = !ok; if (ok) any++; });
+      sec.hidden = !any; shown += any;
+    });
+    document.getElementById("noMatch").hidden = shown > 0;
+  });
+
+  /* Trip Watch test: records interest (route, month, travellers, flexibility). No payment is taken. */
+  const dl = document.getElementById("destList");
+  Object.values(DESTS).flat().forEach(([code, city]) => { const o = document.createElement("option"); o.value = city; dl.appendChild(o); });
+  const when = document.getElementById("tWhen"), now = new Date();
+  for (let i = 0; i < 12; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    const o = document.createElement("option"); o.textContent = d.toLocaleDateString("en-GB", {month: "long", year: "numeric"}); when.appendChild(o);
+  }
+  /* Waitlist mode: until a checkout link is added, every "trial" button leads to this form and it saves to the waitlist. */
+  const tripForm = document.getElementById("tripForm");
+  const tBtn = document.getElementById("tBtn"), tErr = document.getElementById("tErr");
+  if (!LINKS.checkout) {
+    tBtn.textContent = "Join the waitlist";
+    document.getElementById("tNote").textContent = "Free. No card needed. We'll email you the day we open.";
+    document.querySelectorAll(".js-signup").forEach(a => { a.href = "#trip"; a.textContent = "Join the waitlist"; });
+  }
+  const isLive = () => /netlify\.app$/.test(location.hostname) || (LINKS.domain && location.hostname.endsWith(LINKS.domain));
+  tripForm.addEventListener("submit", async e => {
+    e.preventDefault();
+    const to = document.getElementById("tTo").value.trim();
+    const email = document.getElementById("tEmail").value.trim();
+    const problems = [];
+    if (!to) problems.push("the city you're flying to");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problems.push("a valid email address");
+    tErr.hidden = !problems.length;
+    if (problems.length) { tErr.textContent = "Please add " + problems.join(" and ") + "."; return; }
+    const people = String(Math.min(Math.max(parseInt(document.getElementById("tPeople").value, 10) || 1, 1), 20));
+    document.getElementById("tPeople").value = people;
+    track("tripwatch-submit", {
+      from: document.getElementById("tFrom").value, to: to.slice(0, 40), month: when.value,
+      travellers: people, dates: document.getElementById("tDates").value, mode: LINKS.checkout ? "trial" : "waitlist"
+    });
+    tBtn.disabled = true; const label = tBtn.textContent; tBtn.textContent = "Saving…";
+    let saved = false;
+    if (isLive()) {
+      try {
+        const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(new FormData(tripForm)).toString() });
+        saved = res.ok;
+      } catch (err) { saved = false; }
+    }
+    if (LINKS.checkout) {
+      location.href = LINKS.checkout + (LINKS.checkout.includes("?") ? "&" : "?") + "prefilled_email=" + encodeURIComponent(email);
+      return;
+    }
+    tBtn.disabled = false; tBtn.textContent = label;
+    if (isLive() && !saved) { tErr.hidden = false; tErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
+    const whenText = when.value === "not-sure" ? "dates to be decided" : when.options[when.selectedIndex].text;
+    document.getElementById("tSummary").textContent =
+      `${document.getElementById("tFrom").value} to ${to}, ${whenText}, ${people} traveller${people === "1" ? "" : "s"}. We'll send updates to ${email}.`;
+    document.getElementById("tPreview").hidden = isLive();
+    const done = document.getElementById("tDone"); done.hidden = false; done.focus();
+    track("waitlist-joined");
+  });
+
+  /* Sticky button on phones: appears after the first screen, hides while the sign-up form or pricing is on screen. */
+  const sticky = document.getElementById("stickyCta");
+  const inView = new Set();
+  const updateSticky = () => { sticky.hidden = window.scrollY < 500 || inView.size > 0; };
+  if ("IntersectionObserver" in window) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => en.isIntersecting ? inView.add(en.target.id) : inView.delete(en.target.id));
+      updateSticky();
+    });
+    ["trip", "join"].forEach(id => { const el = document.getElementById(id); if (el) io.observe(el); });
+  }
+  window.addEventListener("scroll", updateSticky, { passive: true });
+
+  let calcTracked = false;
+  [fare, people, drop].forEach(el => el.addEventListener("input", () => { if (!calcTracked) { calcTracked = true; track("calculator-used"); } }));
+  [fare, people, drop].forEach(el => el.addEventListener("input", calc));
+  document.getElementById("calc").addEventListener("submit", e => e.preventDefault());
+  calc();
+})();
+</script>
+</body></html>
