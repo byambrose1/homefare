@@ -121,6 +121,17 @@ footer{padding-bottom:72px}
 .join-card .field input,.join-card select{font:500 1rem var(--sans);padding:.7rem .8rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;max-width:none}
 .join-card .btn{width:100%}
 .err{color:var(--red)}
+.privacy-note{margin:-4px 0 0;font-size:.82rem}
+.done-title{font-size:1.15rem}
+.next-head{margin:6px 0 0;font-weight:700}
+.next{list-style:none;margin:0;padding:0;display:grid;gap:10px;border-left:2px solid var(--line);margin-left:6px}
+.next li{display:grid;gap:2px;padding-left:16px;position:relative;font-size:.92rem}
+.next li::before{content:"";position:absolute;left:-7px;top:.35em;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--blue)}
+.next li:first-child::before{background:var(--blue)}
+.next li span{color:var(--muted)}
+.share{display:grid;gap:8px;border-top:1px dashed var(--line);padding-top:12px;font-size:.92rem}
+.share-btns{display:flex;flex-wrap:wrap;gap:8px}
+.share-btns .btn{padding:.55rem .9rem;font-size:.9rem;width:auto}
 .fares{padding-block:clamp(40px,6vw,72px)}
 .kicker{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--red);margin:0}
 .fare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
@@ -255,11 +266,11 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
         <form id="joinForm" class="join-card" name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
           <input type="hidden" name="form-name" value="waitlist">
           <p hidden><label>Leave this empty <input name="bot-field"></label></p>
-          <div class="join-head" id="signup"><b id="joinTitle">Join the waitlist</b><span class="pill" id="joinPill">Opening in December</span></div>
+          <div class="join-head" id="signup"><b id="joinTitle">Join the waitlist</b><span class="pill" id="joinPill">Free until January</span></div>
           <ul class="perks" id="perksWaitlist">
-            <li><b>Free deal alerts through December</b>, while we finish building</li>
-            <li><b>Founding price: £29 for your first year</b> (then £49). Waitlist only</li>
-            <li>No card needed. Unsubscribe in one click</li>
+            <li><b>Free deal alerts from early December</b> for your route home</li>
+            <li><b>£29 founding price</b> for your first year when membership opens in January 2027 (then £49)</li>
+            <li>No card, no automatic charge. Unsubscribe in one click</li>
           </ul>
           <ul class="perks" id="perksTrial" hidden>
             <li><b>7 days free</b>, then £49 a year</li>
@@ -275,12 +286,13 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
           <div class="field"><label for="jEmail">Email</label>
             <input id="jEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com"></div>
           <button id="jBtn" class="btn btn-primary" type="submit">Join the waitlist</button>
+          <p class="small privacy-note">We only use your email to send HomeFare alerts and updates. We never sell or share it.</p>
           <p id="jErr" class="small err" hidden role="alert"></p>
           <div id="jDone" class="t-done" hidden tabindex="-1">
-            <b>You're in.</b>
+            <b class="done-title">You're on the list.</b>
             <p id="jSummary"></p>
+            <div class="next-slot"></div>
             <p class="small">Already know your dates? <a href="#trip">Tell us your trip</a> and we'll watch it for you.</p>
-            <p id="jPreview" class="small" hidden>Preview only: on your live site, this saves to your waitlist.</p>
           </div>
         </form>
         <p class="small"><a href="#fares">See real fares we found this week</a> · <a href="#example">See an example alert</a></p>
@@ -459,10 +471,9 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
         <p id="tNote" class="small" style="text-align:center">7 days free, then £49 a year. Cancel in one click.</p>
         <p id="tErr" class="small" hidden style="color:var(--red)" role="alert"></p>
         <div id="tDone" class="t-done" hidden tabindex="-1">
-          <b>You're on the waitlist.</b>
+          <b class="done-title">You're on the list.</b>
           <p id="tSummary"></p>
-          <p class="small">We'll email you the day HomeFare opens, with your first week free. Nothing has been charged and we don't need your card.</p>
-          <p id="tPreview" class="small" hidden>Preview only: on your live site, this saves to your waitlist.</p>
+          <div class="next-slot"></div>
         </div>
       </form>
     </div>
@@ -525,6 +536,9 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
     <div class="wrap">
       <div class="head"><h2>Questions</h2></div>
       <div class="faq">
+        <details><summary>When does HomeFare open?</summary><p>Free deal alerts start in early December 2026 for everyone on the waitlist. Paid membership opens in January 2027, and waitlist members get their first year for £29.</p></details>
+        <details><summary>Will I be charged for joining the waitlist?</summary><p>No. The waitlist is free and we don't ask for a card. When membership opens we'll email you, and you choose whether to join. Nothing happens automatically.</p></details>
+        <details><summary>What do you do with my email?</summary><p>We use it only to send you HomeFare deal alerts and updates about your route. We never sell or share it, and every email has a one-click unsubscribe link.</p></details>
         <details><summary>Do you sell flights?</summary><p>No. We find the deal and send you the details and a link. You book directly with the airline or a trusted booking site, so your ticket is theirs, not ours.</p></details>
         <details><summary>What counts as a deal?</summary><p>We track each route every day and work out its normal price for that time of year. We only send fares at least 25% below that.</p></details>
         <details><summary>How does the free trial work?</summary><p>You get 7 days of full membership for £0. We email you when it starts and again before it ends. If you do nothing, you're charged £49 for the year. Cancel any time before then and you pay nothing.</p></details>
@@ -549,6 +563,22 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
     </div>
   </div>
 </main>
+
+<template id="nextSteps">
+  <p class="next-head">What happens next</p>
+  <ol class="next">
+    <li><b>Now</b><span>You're saved. Our emails come from homefare.co.uk: add us to your contacts so alerts don't land in spam.</span></li>
+    <li><b>Early December</b><span>Your first free deal alerts arrive, with the usual price, the deal price and exactly what you save.</span></li>
+    <li><b>January 2027</b><span>Membership opens. We'll email you your £29 founding price. Nothing happens automatically: you decide whether to join.</span></li>
+  </ol>
+  <div class="share">
+    <span>Someone in the family group chat flying home too?</span>
+    <div class="share-btns">
+      <a class="btn btn-line wa" data-track="share-whatsapp" target="_blank" rel="noopener" href="https://wa.me/?text=Found%20this%3A%20HomeFare%20finds%20cheap%20flights%20home%20from%20the%20UK.%20Free%20deal%20alerts%20this%20December%3A%20https%3A%2F%2Fhomefare.co.uk">Share on WhatsApp</a>
+      <button class="btn btn-line copy-link" type="button" data-track="share-copy">Copy link</button>
+    </div>
+  </div>
+</template>
 
 <div id="cookieBanner" class="cookie" role="region" aria-label="Cookie choice" hidden>
   <p>Can our travel partner, Travelpayouts, use cookies? It lets us earn a small commission when you book through our links, at no extra cost to you. Our own visitor counting doesn't use cookies.</p>
@@ -673,7 +703,7 @@ function track(name, data){
   const jBtn = document.getElementById("jBtn"), jErr = document.getElementById("jErr");
   if (!LINKS.checkout) {
     tBtn.textContent = "Join the waitlist";
-    document.getElementById("tNote").textContent = "Free. No card needed. Founding members get their first year for £29.";
+    document.getElementById("tNote").textContent = "Free. No card, no automatic charge. Free alerts from early December.";
     document.querySelectorAll(".js-signup").forEach(a => { a.href = "#signup"; a.textContent = "Join the waitlist"; });
     document.getElementById("founding").hidden = false;
   } else {
@@ -686,7 +716,22 @@ function track(name, data){
   document.querySelectorAll('a[href="#signup"]').forEach(a => a.addEventListener("click", () => {
     setTimeout(() => document.getElementById("jHome").focus({ preventScroll: true }), 400);
   }));
-  const isLive = () => /netlify\.app$/.test(location.hostname) || (LINKS.domain && location.hostname.endsWith(LINKS.domain));
+  /* Previews (a local file, or the page shown inside another page) don't save. The real site always does. */
+  const isPreview = () => { if (location.protocol === "file:") return true; try { return window.self !== window.top; } catch (err) { return true; } };
+  const showDone = (doneId, summaryId, summary) => {
+    document.getElementById(summaryId).textContent = summary;
+    const done = document.getElementById(doneId);
+    const slot = done.querySelector(".next-slot");
+    if (slot && !slot.childElementCount) {
+      slot.appendChild(document.getElementById("nextSteps").content.cloneNode(true));
+      slot.querySelector(".copy-link").addEventListener("click", async ev => {
+        const b = ev.currentTarget;
+        try { await navigator.clipboard.writeText("https://homefare.co.uk"); b.textContent = "Link copied"; }
+        catch (err) { b.textContent = "homefare.co.uk"; }
+      });
+    }
+    done.hidden = false; done.focus();
+  };
   tripForm.addEventListener("submit", async e => {
     e.preventDefault();
     const to = document.getElementById("tTo").value.trim();
@@ -704,7 +749,7 @@ function track(name, data){
     });
     tBtn.disabled = true; const label = tBtn.textContent; tBtn.textContent = "Saving…";
     let saved = false;
-    if (isLive()) {
+    if (!isPreview()) {
       try {
         const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(new FormData(tripForm)).toString() });
@@ -716,12 +761,10 @@ function track(name, data){
       return;
     }
     tBtn.disabled = false; tBtn.textContent = label;
-    if (isLive() && !saved) { tErr.hidden = false; tErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
+    if (!isPreview() && !saved) { tErr.hidden = false; tErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
     const whenText = when.value === "not-sure" ? "dates to be decided" : when.options[when.selectedIndex].text;
-    document.getElementById("tSummary").textContent =
-      `${document.getElementById("tFrom").value} to ${to}, ${whenText}, ${people} traveller${people === "1" ? "" : "s"}. We'll send updates to ${email}.`;
-    document.getElementById("tPreview").hidden = isLive();
-    const done = document.getElementById("tDone"); done.hidden = false; done.focus();
+    showDone("tDone", "tSummary",
+      `${document.getElementById("tFrom").value} to ${to}, ${whenText}, ${people} traveller${people === "1" ? "" : "s"}. Alerts and updates go to ${email}.`);
     track("waitlist-joined");
   });
 
@@ -738,7 +781,7 @@ function track(name, data){
     track("hero-signup", { home: home.slice(0, 40), airport: document.getElementById("jFrom").value, mode: LINKS.checkout ? "trial" : "waitlist" });
     jBtn.disabled = true; const label = jBtn.textContent; jBtn.textContent = "Saving…";
     let saved = false;
-    if (isLive()) {
+    if (!isPreview()) {
       try {
         const res = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: new URLSearchParams(new FormData(joinForm)).toString() });
@@ -750,11 +793,9 @@ function track(name, data){
       return;
     }
     jBtn.disabled = false; jBtn.textContent = label;
-    if (isLive() && !saved) { jErr.hidden = false; jErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
-    document.getElementById("jSummary").textContent =
-      `We'll send deals from ${document.getElementById("jFrom").value} to ${home} to ${email}, free through December, and hold your £29 founding price.`;
-    document.getElementById("jPreview").hidden = isLive();
-    const done = document.getElementById("jDone"); done.hidden = false; done.focus();
+    if (!isPreview() && !saved) { jErr.hidden = false; jErr.textContent = "We couldn't save that just now. Please try again in a minute."; return; }
+    showDone("jDone", "jSummary",
+      `Deals from ${document.getElementById("jFrom").value} to ${home} will go to ${email}. Your £29 founding price is held for you.`);
     track("waitlist-joined");
   });
 
