@@ -121,6 +121,12 @@ footer{padding-bottom:72px}
 .join-card .field input,.join-card select{font:500 1rem var(--sans);padding:.7rem .8rem;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);width:100%;max-width:none}
 .join-card .btn{width:100%}
 .err{color:var(--red)}
+.label-hint{font-weight:400;color:var(--muted);font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips:empty{display:none}
+.join-card .tf-row{grid-template-columns:1fr}
+.chip{white-space:nowrap;font:600 .88rem var(--sans);background:var(--soft);color:var(--ink);border:1px solid var(--blue);border-radius:999px;padding:5px 10px;cursor:pointer}
+.chip:hover{background:var(--blue);color:#fff}
 .privacy-note{margin:-4px 0 0;font-size:.82rem}
 .done-title{font-size:1.15rem}
 .next-head{margin:6px 0 0;font-weight:700}
@@ -190,6 +196,7 @@ footer{padding-bottom:72px}
 .tag::before{content:"";position:absolute;left:12px;top:50%;width:10px;height:10px;margin-top:-5px;border-radius:50%;background:var(--bg);box-shadow:inset 0 0 0 2px #C9B57A}
 .tag .c{font-family:var(--mono);font-weight:600;font-size:1.6rem;line-height:1}
 .tag .n{font-family:var(--marker);font-size:1.05rem;color:#B12A20}
+.tag .k{font-size:.78rem;color:#4A5568}
 .tag .s{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
 .tag.live .s{color:#1D7A4C}
 .tag.soon{background:#EEF0F4}.tag.soon .s{color:#6A7386}
@@ -278,8 +285,10 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
             <li>Cancel in one click, any time</li>
           </ul>
           <div class="tf-row">
-            <div class="field"><label for="jHome">Where's home?</label>
-              <input id="jHome" name="home" list="destList" placeholder="e.g. Lagos, Lahore, Kingston" autocomplete="off"></div>
+            <div class="field"><label for="jHome">Where's home? <span class="label-hint">Add as many as you like</span></label>
+              <div class="chips" id="homeChips" aria-live="polite"></div>
+              <input id="jHome" list="destList" placeholder="Type a city or country" autocomplete="off">
+              <input type="hidden" name="home" id="jHomeVal"></div>
             <div class="field"><label for="jFrom">Your UK airport</label>
               <select id="jFrom" name="airport"><option>London (any)</option><option>Manchester</option><option>Birmingham</option><option>Other UK airport</option></select></div>
           </div>
@@ -326,12 +335,12 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
         <p class="muted">Examples from our daily price scan, not offers. Fares change fast, which is exactly why we check every day.</p>
       </div>
       <div class="fare-grid">
-        <article class="fare"><div class="fr">LON → LOS</div><h3>Lagos</h3><div class="fp">£313 <small>return</small></div><p>26 Jan – 2 Feb · Royal Air Maroc · 1 stop</p><p class="fv">Checked live on Google Flights</p></article>
-        <article class="fare"><div class="fr">LGW → DEL</div><h3>Delhi</h3><div class="fp">£434 <small>return</small></div><p>19 – 28 May · Gulf Air · 1 stop</p></article>
-        <article class="fare"><div class="fr">LHR → MNL</div><h3>Manila</h3><div class="fp">£447 <small>return</small></div><p>22 Jan – 20 Feb · Xiamen Air · 1 stop</p></article>
-        <article class="fare"><div class="fr">LHR → CMB</div><h3>Colombo</h3><div class="fp">£527 <small>return</small></div><p>14 Jan – 3 Feb · Etihad · 1 stop</p></article>
-        <article class="fare"><div class="fr">LHR → ATQ</div><h3>Amritsar</h3><div class="fp">£575 <small>return</small></div><p>17 Feb – 14 Mar · Air India · 1 stop</p></article>
-        <article class="fare"><div class="fr">LGW → DAC</div><h3>Dhaka</h3><div class="fp">£578 <small>return</small></div><p>11 Jan – 1 Feb · Air Arabia · 1 stop</p></article>
+        <article class="fare"><div class="fr">LON → LOS</div><h3>Lagos, Nigeria</h3><div class="fp">£313 <small>return</small></div><p>26 Jan – 2 Feb · Royal Air Maroc · 1 stop</p><p class="fv">Checked live on Google Flights</p></article>
+        <article class="fare"><div class="fr">LGW → DEL</div><h3>Delhi, India</h3><div class="fp">£434 <small>return</small></div><p>19 – 28 May · Gulf Air · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → MNL</div><h3>Manila, Philippines</h3><div class="fp">£447 <small>return</small></div><p>22 Jan – 20 Feb · Xiamen Air · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → CMB</div><h3>Colombo, Sri Lanka</h3><div class="fp">£527 <small>return</small></div><p>14 Jan – 3 Feb · Etihad · 1 stop</p></article>
+        <article class="fare"><div class="fr">LHR → ATQ</div><h3>Amritsar, India</h3><div class="fp">£575 <small>return</small></div><p>17 Feb – 14 Mar · Air India · 1 stop</p></article>
+        <article class="fare"><div class="fr">LGW → DAC</div><h3>Dhaka, Bangladesh</h3><div class="fp">£578 <small>return</small></div><p>11 Jan – 1 Feb · Air Arabia · 1 stop</p></article>
       </div>
       <p class="small">Per person, economy, found on 11 Nov 2026. Bag allowances vary by fare. Waitlist members get alerts like these through December, free.</p>
     </div>
@@ -435,7 +444,7 @@ footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:8px 24px;justify
       </div>
       <div class="field" style="margin-bottom:26px">
         <label for="destSearch">City or airport code</label>
-        <input id="destSearch" type="search" placeholder="e.g. Kingston, Lahore, NBO" autocomplete="off" style="max-width:360px;font-family:var(--sans)">
+        <input id="destSearch" type="search" placeholder="e.g. Jamaica, Lahore, NBO" autocomplete="off" style="max-width:360px;font-family:var(--sans)">
       </div>
       <div id="regions" class="regions"></div>
       <p id="noMatch" class="small" hidden>We're not watching that one yet. Tell us after you sign up and we'll add it. If we can't, cancel during your trial and you pay nothing.</p>
@@ -655,25 +664,27 @@ function track(name, data){
   }
   /* Destinations: add or remove cities here */
   const DESTS = {
-    "West Africa": [["LOS","Lagos"],["ABV","Abuja"],["PHC","Port Harcourt"],["ACC","Accra"],["FNA","Freetown"],["BJL","Banjul"],["DSS","Dakar"],["DLA","Douala"]],
-    "East & Southern Africa": [["NBO","Nairobi"],["EBB","Entebbe"],["ADD","Addis Ababa"],["HGA","Hargeisa"],["KGL","Kigali"],["HRE","Harare"],["LUN","Lusaka"],["JNB","Johannesburg"]],
-    "South Asia": [["ISB","Islamabad"],["LHE","Lahore"],["KHI","Karachi"],["PEW","Peshawar"],["DEL","Delhi"],["BOM","Mumbai"],["ATQ","Amritsar"],["AMD","Ahmedabad"],["HYD","Hyderabad"],["BLR","Bengaluru"],["MAA","Chennai"],["COK","Kochi"],["DAC","Dhaka"],["ZYL","Sylhet"],["CMB","Colombo"],["KTM","Kathmandu"]],
-    "Caribbean & South America": [["KIN","Kingston"],["MBJ","Montego Bay"],["BGI","Barbados"],["POS","Port of Spain"],["UVF","St Lucia"],["ANU","Antigua"],["GND","Grenada"],["GEO","Georgetown"]],
-    "Middle East & North Africa": [["CAI","Cairo"],["CMN","Casablanca"],["ALG","Algiers"],["IST","Istanbul"],["EBL","Erbil"],["AMM","Amman"]],
-    "East & Southeast Asia": [["HKG","Hong Kong"],["MNL","Manila"],["SGN","Ho Chi Minh City"],["KUL","Kuala Lumpur"]]
+    "West Africa": [["LOS","Lagos","Nigeria"],["ABV","Abuja","Nigeria"],["PHC","Port Harcourt","Nigeria"],["ACC","Accra","Ghana"],["FNA","Freetown","Sierra Leone"],["BJL","Banjul","The Gambia"],["DSS","Dakar","Senegal"],["DLA","Douala","Cameroon"]],
+    "East & Southern Africa": [["NBO","Nairobi","Kenya"],["EBB","Entebbe","Uganda"],["ADD","Addis Ababa","Ethiopia"],["HGA","Hargeisa","Somaliland"],["KGL","Kigali","Rwanda"],["HRE","Harare","Zimbabwe"],["LUN","Lusaka","Zambia"],["JNB","Johannesburg","South Africa"]],
+    "South Asia": [["ISB","Islamabad","Pakistan"],["LHE","Lahore","Pakistan"],["KHI","Karachi","Pakistan"],["PEW","Peshawar","Pakistan"],["DEL","Delhi","India"],["BOM","Mumbai","India"],["ATQ","Amritsar","India"],["AMD","Ahmedabad","India"],["HYD","Hyderabad","India"],["BLR","Bengaluru","India"],["MAA","Chennai","India"],["COK","Kochi","India"],["DAC","Dhaka","Bangladesh"],["ZYL","Sylhet","Bangladesh"],["CMB","Colombo","Sri Lanka"],["KTM","Kathmandu","Nepal"]],
+    "Caribbean & South America": [["KIN","Kingston","Jamaica"],["MBJ","Montego Bay","Jamaica"],["BGI","Bridgetown","Barbados"],["POS","Port of Spain","Trinidad and Tobago"],["UVF","Vieux Fort","St Lucia"],["ANU","St John's","Antigua"],["GND","St George's","Grenada"],["GEO","Georgetown","Guyana"]],
+    "Middle East & North Africa": [["CAI","Cairo","Egypt"],["CMN","Casablanca","Morocco"],["ALG","Algiers","Algeria"],["IST","Istanbul","Turkey"],["EBL","Erbil","Iraq"],["AMM","Amman","Jordan"]],
+    "East & Southeast Asia": [["HKG","Hong Kong",""],["MNL","Manila","Philippines"],["SGN","Ho Chi Minh City","Vietnam"],["KUL","Kuala Lumpur","Malaysia"]]
   };
+  const placeName = (city, country) => country ? `${city}, ${country}` : city;
   const regionsEl = document.getElementById("regions");
   let total = 0;
   for (const [region, list] of Object.entries(DESTS)) {
     const sec = document.createElement("div"); sec.className = "region";
     const h = document.createElement("h3"); h.textContent = region; sec.appendChild(h);
     const wrap = document.createElement("div"); wrap.className = "tags";
-    for (const [code, city] of list) {
+    for (const [code, city, country] of list) {
       const t = document.createElement("div"); t.className = "tag live";
-      t.dataset.q = (code + " " + city).toLowerCase();
+      t.dataset.q = (code + " " + city + " " + country).toLowerCase();
       const c = document.createElement("span"); c.className = "c"; c.textContent = code;
       const n = document.createElement("span"); n.className = "n"; n.textContent = city;
-      t.append(c, n); wrap.appendChild(t); total++;
+      const k = document.createElement("span"); k.className = "k"; k.textContent = country || "\u00a0";
+      t.append(c, n, k); wrap.appendChild(t); total++;
     }
     sec.appendChild(wrap); regionsEl.appendChild(sec);
   }
@@ -690,7 +701,8 @@ function track(name, data){
 
   /* Trip Watch test: records interest (route, month, travellers, flexibility). No payment is taken. */
   const dl = document.getElementById("destList");
-  Object.values(DESTS).flat().forEach(([code, city]) => { const o = document.createElement("option"); o.value = city; dl.appendChild(o); });
+  const PLACES = Object.values(DESTS).flat().map(([code, city, country]) => placeName(city, country));
+  PLACES.forEach(name => { const o = document.createElement("option"); o.value = name; dl.appendChild(o); });
   const when = document.getElementById("tWhen"), now = new Date();
   for (let i = 0; i < 12; i++) {
     const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
@@ -768,17 +780,44 @@ function track(name, data){
     track("waitlist-joined");
   });
 
+  /* Several homes: each pick becomes a removable chip; the hidden "home" field sends them all, separated by semicolons. */
+  const homes = [];
+  const homeInput = document.getElementById("jHome"), chipsEl = document.getElementById("homeChips"), homeVal = document.getElementById("jHomeVal");
+  const renderHomes = () => {
+    chipsEl.textContent = "";
+    homes.forEach((h, i) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "chip"; b.setAttribute("aria-label", "Remove " + h);
+      b.textContent = h + " \u00d7";
+      b.addEventListener("click", () => { homes.splice(i, 1); renderHomes(); homeInput.focus(); });
+      chipsEl.appendChild(b);
+    });
+    homeVal.value = homes.join("; ");
+    homeInput.placeholder = homes.length ? "Add another (optional)" : "Type a city or country";
+  };
+  function addHome(raw) {
+    const v = (raw || "").trim().replace(/\s+/g, " ");
+    if (!v) return;
+    const match = PLACES.find(p => p.toLowerCase() === v.toLowerCase()) || v.slice(0, 60);
+    if (!homes.some(h => h.toLowerCase() === match.toLowerCase()) && homes.length < 8) homes.push(match);
+    homeInput.value = ""; renderHomes();
+  }
+  homeInput.addEventListener("input", () => { if (PLACES.includes(homeInput.value)) addHome(homeInput.value); });
+  homeInput.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === ",") { e.preventDefault(); addHome(homeInput.value); } });
+  homeInput.addEventListener("blur", () => { if (homeInput.value.trim()) addHome(homeInput.value); });
+
   /* Hero sign-up: email, home city and airport. Saves to the "waitlist" form, or goes to checkout once payments are live. */
   joinForm.addEventListener("submit", async e => {
     e.preventDefault();
-    const home = document.getElementById("jHome").value.trim();
+    addHome(document.getElementById("jHome").value);
+    const home = homes.join(" · ");
     const email = document.getElementById("jEmail").value.trim();
     const problems = [];
-    if (!home) problems.push("where home is");
+    if (!homes.length) problems.push("where home is");
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) problems.push("a valid email address");
     jErr.hidden = !problems.length;
     if (problems.length) { jErr.textContent = "Please add " + problems.join(" and ") + "."; return; }
-    track("hero-signup", { home: home.slice(0, 40), airport: document.getElementById("jFrom").value, mode: LINKS.checkout ? "trial" : "waitlist" });
+    track("hero-signup", { home: homes.join("; ").slice(0, 120), homes: String(homes.length), airport: document.getElementById("jFrom").value, mode: LINKS.checkout ? "trial" : "waitlist" });
     jBtn.disabled = true; const label = jBtn.textContent; jBtn.textContent = "Saving…";
     let saved = false;
     if (!isPreview()) {
