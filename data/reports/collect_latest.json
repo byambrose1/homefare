@@ -1,9 +1,9 @@
 {
-  "checked_on": "2026-11-14",
+  "checked_on": "2026-11-15",
   "route_months_requested": 1800,
-  "route_months_with_prices": 284,
-  "route_months_without_data": 1516,
-  "coverage_pct": 15.8,
+  "route_months_with_prices": 288,
+  "route_months_without_data": 1512,
+  "coverage_pct": 16.0,
   "errors": 0,
   "error_examples": []
 }
