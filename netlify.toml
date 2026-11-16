@@ -1,0 +1,5 @@
+# Tells Netlify where the website lives in this repo.
+# Only the site/ folder is published; the price engine and data stay private.
+[build]
+  publish = "site"
+  command = ""
