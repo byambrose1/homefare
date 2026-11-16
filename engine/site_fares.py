@@ -111,7 +111,7 @@ def block(date_label: str, fares: list[dict]) -> str:
       <div class="fare-grid">
 {cards}
       </div>
-      <p class="small">Per person, economy, seen on {date_label}. Updated every morning. Bag allowances vary by fare. Waitlist members get alerts like these through December, free.</p>
+      <p class="small">Per person, economy, seen on {date_label}. Updated every morning. Bag allowances vary by fare. Members get alerts like these from 1 December.</p>
       {END}"""
 
 
