@@ -1,0 +1,65 @@
+{
+  "seen_on": "2026-11-15",
+  "fares": [
+    {
+      "from": "STN",
+      "to": "CMN",
+      "place": "Casablanca, Morocco",
+      "price": 100,
+      "dates": "12 – 19 Jan",
+      "airline": "Royal Air Maroc",
+      "stops": "Direct",
+      "checked_live": false
+    },
+    {
+      "from": "SEN",
+      "to": "BJL",
+      "place": "Banjul, The Gambia",
+      "price": 332,
+      "dates": "27 Nov – 6 Dec",
+      "airline": "easyJet",
+      "stops": "1 stop",
+      "checked_live": false
+    },
+    {
+      "from": "LHR",
+      "to": "HKG",
+      "place": "Hong Kong",
+      "price": 336,
+      "dates": "29 Nov – 6 Dec",
+      "airline": "China Southern",
+      "stops": "1 stop",
+      "checked_live": false
+    },
+    {
+      "from": "STN",
+      "to": "BOM",
+      "place": "Mumbai, India",
+      "price": 438,
+      "dates": "21 – 29 Jan",
+      "airline": "Pegasus",
+      "stops": "2 stops",
+      "checked_live": false
+    },
+    {
+      "from": "LGW",
+      "to": "BGI",
+      "place": "Bridgetown, Barbados",
+      "price": 467,
+      "dates": "10 – 24 Dec",
+      "airline": "TUI",
+      "stops": "Direct",
+      "checked_live": false
+    },
+    {
+      "from": "LGW",
+      "to": "NBO",
+      "place": "Nairobi, Kenya",
+      "price": 489,
+      "dates": "18 – 31 Jan",
+      "airline": "Kenya Airways",
+      "stops": "Direct",
+      "checked_live": false
+    }
+  ]
+}

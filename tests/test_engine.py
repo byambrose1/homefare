@@ -132,3 +132,24 @@ def test_learning_checks_spread_across_routes():
     _, learning, _ = find_deals.analyse(rows, "2026-11-11", RULES, {})
     first_two = [(l["destination"], l["depart_month"]) for l in learning[:2]]
     assert first_two == [("LOS", "2027-02"), ("KIN", "2027-03")]
+
+
+def test_site_fares_one_per_region_and_future_only():
+    import datetime as dt
+    from engine import site_fares
+    cfg = {"destinations": [
+        {"code": "LOS", "city": "Lagos", "region": "West Africa", "country": "Nigeria"},
+        {"code": "ACC", "city": "Accra", "region": "West Africa", "country": "Ghana"},
+        {"code": "DEL", "city": "Delhi", "region": "South Asia", "country": "India"},
+    ]}
+    def row(dest, price, dep, day="2026-11-15"):
+        return {"checked_on": day, "origin": "LON", "origin_airport": "LHR", "destination": dest,
+                "destination_airport": dest, "departure_at": dep + "T10:00:00Z", "return_at": "2027-02-10T10:00:00Z",
+                "price": str(price), "airline": "AT", "transfers": "1"}
+    rows = [row("LOS", 313, "2027-01-26"), row("ACC", 300, "2026-11-17"),  # Accra leaves too soon
+            row("DEL", 434, "2027-01-20"), row("DEL", 200, "2027-01-20", day="2026-11-14")]  # old day ignored
+    latest, fares = site_fares.build(rows, cfg, {}, dt.date(2026, 11, 16))
+    assert latest == "2026-11-15"
+    assert [(f["place"], f["price"]) for f in fares] == [("Lagos, Nigeria", 313), ("Delhi, India", 434)]
+    assert fares[0]["airline"] == "Royal Air Maroc" and fares[0]["stops"] == "1 stop"
+    assert fares[0]["dates"] == "26 Jan – 10 Feb"
