@@ -1,5 +1,5 @@
 {
-  "seen_on": "2026-11-15",
+  "seen_on": "2026-11-16",
   "fares": [
     {
       "from": "STN",
@@ -35,7 +35,7 @@
       "from": "STN",
       "to": "BOM",
       "place": "Mumbai, India",
-      "price": 438,
+      "price": 427,
       "dates": "21 – 29 Jan",
       "airline": "Pegasus",
       "stops": "2 stops",
@@ -52,13 +52,13 @@
       "checked_live": false
     },
     {
-      "from": "LGW",
+      "from": "LTN",
       "to": "NBO",
       "place": "Nairobi, Kenya",
-      "price": 489,
-      "dates": "18 – 31 Jan",
-      "airline": "Kenya Airways",
-      "stops": "Direct",
+      "price": 485,
+      "dates": "9 – 16 Jan",
+      "airline": "W9",
+      "stops": "1 stop",
       "checked_live": false
     }
   ]
