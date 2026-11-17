@@ -29,7 +29,7 @@ AIRLINES = {
     "ET": "Ethiopian Airlines", "MS": "EgyptAir", "WY": "Oman Air", "SV": "Saudia", "PK": "PIA",
     "UL": "SriLankan Airlines", "BG": "Biman Bangladesh", "LH": "Lufthansa", "AF": "Air France", "KL": "KLM",
     "LX": "Swiss", "OS": "Austrian", "SN": "Brussels Airlines", "TP": "TAP Air Portugal", "IB": "Iberia",
-    "UX": "Air Europa", "AZ": "ITA Airways", "W6": "Wizz Air", "FR": "Ryanair", "U2": "easyJet", "LS": "Jet2",
+    "UX": "Air Europa", "AZ": "ITA Airways", "W6": "Wizz Air", "W9": "Wizz Air", "5W": "Wizz Air", "FR": "Ryanair", "U2": "easyJet", "LS": "Jet2",
     "VY": "Vueling", "XQ": "SunExpress", "AH": "Air Algérie", "TU": "Tunisair", "RJ": "Royal Jordanian",
     "IA": "Iraqi Airways", "CX": "Cathay Pacific", "PR": "Philippine Airlines", "VN": "Vietnam Airlines",
     "MH": "Malaysia Airlines", "SQ": "Singapore Airlines", "CA": "Air China", "MU": "China Eastern",
