@@ -1,5 +1,5 @@
 {
-  "seen_on": "2026-11-16",
+  "seen_on": "2026-11-17",
   "fares": [
     {
       "from": "STN",
@@ -45,7 +45,7 @@
       "from": "LGW",
       "to": "BGI",
       "place": "Bridgetown, Barbados",
-      "price": 467,
+      "price": 436,
       "dates": "10 – 24 Dec",
       "airline": "TUI",
       "stops": "Direct",
