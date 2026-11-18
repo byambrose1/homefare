@@ -1,43 +1,43 @@
 {
-  "seen_on": "2026-11-17",
+  "seen_on": "2026-11-18",
   "fares": [
     {
       "from": "STN",
-      "to": "CMN",
-      "place": "Casablanca, Morocco",
-      "price": 100,
-      "dates": "12 – 19 Jan",
-      "airline": "Royal Air Maroc",
+      "to": "SAW",
+      "place": "Istanbul, Turkey",
+      "price": 108,
+      "dates": "17 – 28 Feb",
+      "airline": "Pegasus",
       "stops": "Direct",
       "checked_live": false
     },
     {
-      "from": "SEN",
-      "to": "BJL",
-      "place": "Banjul, The Gambia",
-      "price": 332,
-      "dates": "27 Nov – 6 Dec",
-      "airline": "easyJet",
-      "stops": "1 stop",
-      "checked_live": false
-    },
-    {
-      "from": "LHR",
+      "from": "LGW",
       "to": "HKG",
       "place": "Hong Kong",
-      "price": 336,
-      "dates": "29 Nov – 6 Dec",
-      "airline": "China Southern",
+      "price": 340,
+      "dates": "3 – 17 Feb",
+      "airline": "Air China",
       "stops": "1 stop",
       "checked_live": false
     },
     {
       "from": "STN",
-      "to": "BOM",
-      "place": "Mumbai, India",
-      "price": 427,
-      "dates": "21 – 29 Jan",
-      "airline": "Pegasus",
+      "to": "LOS",
+      "place": "Lagos, Nigeria",
+      "price": 346,
+      "dates": "7 – 10 Feb",
+      "airline": "Royal Air Maroc",
+      "stops": "1 stop",
+      "checked_live": false
+    },
+    {
+      "from": "LTN",
+      "to": "DEL",
+      "place": "Delhi, India",
+      "price": 417,
+      "dates": "6 – 27 Jan",
+      "airline": "Wizz Air",
       "stops": "2 stops",
       "checked_live": false
     },
