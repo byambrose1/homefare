@@ -1,5 +1,5 @@
 {
-  "seen_on": "2026-11-19",
+  "seen_on": "2026-11-20",
   "fares": [
     {
       "from": "LGW",
@@ -15,7 +15,7 @@
       "from": "LGW",
       "to": "HKG",
       "place": "Hong Kong",
-      "price": 338,
+      "price": 340,
       "dates": "3 – 17 Feb",
       "airline": "Air China",
       "stops": "1 stop",
@@ -25,8 +25,8 @@
       "from": "STN",
       "to": "LOS",
       "place": "Lagos, Nigeria",
-      "price": 353,
-      "dates": "26 Feb – 13 Mar",
+      "price": 354,
+      "dates": "26 Feb – 28 Mar",
       "airline": "Royal Air Maroc",
       "stops": "1 stop",
       "checked_live": false

@@ -1,6 +1,8 @@
 {
-  "checked_at": "2026-11-19 14:18 UTC",
+  "checked_at": "2026-11-20 13:57 UTC",
   "searches_used": 6,
   "verified_deals": 0,
-  "errors": []
+  "errors": [
+    "LON-NBO 2027-03-19: Google Flights hasn't returned any results for this query."
+  ]
 }
